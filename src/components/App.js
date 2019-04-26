@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { startGame, cancelGame } from '../actions/settings';
-// import  {startGame} from '../actions/settings';
+import Instructions from './instructions';
 
 class App extends Component {
     render() {
@@ -21,6 +21,8 @@ class App extends Component {
             <h3>A new game awaits</h3>
             <br />
             <button onClick={this.props.startGame}>Start Game</button>
+            <hr />
+            <Instructions />
           </div>
         )
       }
@@ -38,9 +40,10 @@ const mapDispatchToProps = dispatch => {
   return {
     startGame: () => dispatch(startGame()), 
     cancelGame: () => dispatch(cancelGame())
+
   };
 }
 
-const comonentConnector = connect(mapStateToProps, mapDispatchToProps);
+const componentConnector = connect(mapStateToProps, mapDispatchToProps);
 
-export default comonentConnector(App);
+export default componentConnector(App);
