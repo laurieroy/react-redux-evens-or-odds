@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { startGame, cancelGame } from '../actions/settings';
 import { fetchNewDeck } from '../actions/deck';
 import fetchStates from '../reducers/fetchStates';
-import Instructions from './instructions';
-
+import Instructions from './Instructions';
+import DrawCard from './DrawCard';
 
 class App extends Component {
   startGame = () => {
     this.props.startGame();
-    this.props.fetchNewDeck;
+    this.props.fetchNewDeck();
   }
 
   render() {
@@ -31,6 +31,8 @@ class App extends Component {
           <div>
             <h3>The game is on!</h3>
             <br />
+            <DrawCard />
+            <hr />
             <button onClick={this.props.cancelGame}>Cancel Game</button>
           </div>
         ) : (
