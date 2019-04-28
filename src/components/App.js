@@ -16,8 +16,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('this', this);
-
     if (this.props.fetchState === fetchStates.error) {
       return (
         <div>
@@ -28,7 +26,7 @@ class App extends Component {
     }
     return (
       <div>
-        <h2>Evens or Odds</h2>
+        <h2>♠️ ♥️ Evens or Odds ♦️ ♣️</h2>
       {
         this.props.gameStarted ? (
           <div>
@@ -67,14 +65,6 @@ const mapStateToProps = state => {
 
   return {gameStarted, fetchState, message};
 }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     startGame: () => dispatch(startGame()), 
-//     cancelGame: () => dispatch(cancelGame()),
-//     fetchNewDeck: () => dispatch(fetchNewDeck())
-//   };
-// }
 
 const componentConnector = connect(
   mapStateToProps, 

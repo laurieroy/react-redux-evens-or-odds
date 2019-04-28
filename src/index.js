@@ -9,9 +9,6 @@ import './index.css'
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-console.log('store.getState()', store.getState());
-console.log('store', store);
-
 store.subscribe(() => console.log('store.getState()', store.getState()));
 
 ReactDOM.render(

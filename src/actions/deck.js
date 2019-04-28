@@ -4,7 +4,6 @@ import { DECK, DECK_DRAW } from './types';
 
 export const fetchDeckSuccess = deckJson => {
   const { remaining, deck_id } = deckJson;
-  console.log('deckJson', deckJson);
 
   return { type: DECK.FETCH_SUCCESS, remaining, deck_id };
 }
@@ -15,7 +14,6 @@ export const fetchDeckError = error => {
 
 export const fetchCardSuccess = deckJson => {
   const { remaining, deck_id } = deckJson;
-  console.log('deckJson', deckJson);
 
   return { type: DECK.FETCH_SUCCESS, remaining, deck_id };
 }
